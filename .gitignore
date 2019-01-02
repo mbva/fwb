@@ -1,0 +1,6 @@
+*.pyc
+*.html~
+*.css~
+*.js~
+*.py~
+migrations/
