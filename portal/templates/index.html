@@ -38,6 +38,37 @@
                         </div>
                     </div>
                     <!-- nav-button-wrap end-->
+                    <!--  navigation -->
+                    <div class="nav-holder main-menu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="/" class="act-link">Home <i class="fa fa-caret-down"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#">Species <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->
+                                    <ul>
+                                      {% for c in species %}
+                                        <li><a href="#{{ c.code }}">{{ c.scientific_name }}</a></li>
+                                      {% endfor %}
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                                <li>
+                                    <a href="#">Occurrences <i class="fa fa-caret-down"></i></a>
+                                    <!--second level -->
+                                    <ul>
+                                      {% for o in occurrencies %}
+                                        <li><a href="#{{ o.code }}">{{ o.specie.scientific_name }}</a></li>
+                                      {% endfor %}
+                                    </ul>
+                                    <!--second level end-->
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- navigation  end -->
                 </div>
             </header>
             <!--  header end -->
@@ -67,11 +98,9 @@
                                         <div class="main-search-input-item">
                                             <select data-placeholder="All Categories" multiple class="chosen-select" >
                                                 <option>All Categories</option>
-                                                <option>Shops</option>
-                                                <option>Hotels</option>
-                                                <option>Restaurants</option>
-                                                <option>Fitness</option>
-                                                <option>Events</option>
+                                                {% for c in categories %}
+                                                    <option value="{{ c.code }}">{{ c.name }}</option>
+                                                {% endfor %}
                                             </select>
                                         </div>
                                         <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>

@@ -29,4 +29,12 @@ from portal.models import *
 
 
 def home(request):
-    return render_to_response("index.html")
+    categories = Category.objects.all()
+    species = DataSet.objects.all()
+    institutions = Insititution.objects.all()
+    water_bodies = WaterBody.objects.all()
+    data_sets = DataSet.objects.all()
+    occurrencies = Occurrance.objects.all()
+
+    variables = RequestContext(request, {"categories":categories, "species":species, "institutions":institutions, "water_bodies":water_bodies, "data_sets":data_sets, "occurrencies":occurrencies})
+    return render_to_response("index.html", variables)
