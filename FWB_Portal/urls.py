@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from portal import views
+
+
+admin.site.site_title = 'FWB Portal Site Admin'
+
+admin.site.site_header = 'FWB Portal Administration'
+
+admin.site.index_title = 'FWB Portal Administration'
+
 
 urlpatterns = [
+    url(r'^$', views.home, name='home'),
     url(r'^admin/', admin.site.urls),
 ]

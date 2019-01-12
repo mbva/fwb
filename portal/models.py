@@ -48,7 +48,7 @@ class Status(models.Model):
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User)
-    contact = models,CharField(max_length=255)
+    contact = models.CharField(max_length=255)
     organization = models.CharField(max_length=255)
     user_role = models.ForeignKey(UserRole)
     registered_by = models.CharField(max_length=255)

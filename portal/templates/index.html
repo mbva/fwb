@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <title>FWB Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <!--=============== css  ===============-->
+        <link type="text/css" rel="stylesheet" href="/static/css/reset.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/plugins.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/color.css">
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="/static/images/favicon.ico">
+    </head>
+    <body>
+        <!--loader-->
+        <div class="loader-wrap">
+            <div class="pin"></div>
+            <div class="pulse"></div>
+        </div>
+        <!--loader end-->
+        <!-- Main  -->
+        <div id="main">
+            <!-- header-->
+            <header class="main-header dark-header fs-header sticky">
+                <div class="header-inner">
+                    <div class="logo-holder">
+                        <a href="/"><img src="/static/images/logo.png" alt=""></a>
+                    </div>
+                    <!-- nav-button-wrap-->
+                    <div class="nav-button-wrap color-bg">
+                        <div class="nav-button">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <!-- nav-button-wrap end-->
+                </div>
+            </header>
+            <!--  header end -->
+            <!--  wrapper  -->
+            <div id="wrapper">
+                <!-- Content-->
+                <div class="content">
+                    <!--section -->
+                    <section class="scroll-con-sec hero-section" data-scrollax-parent="true" id="sec1">
+                        <div class="bg"  data-bg="/static/images/bg/32.jpg" data-scrollax="properties: { translateY: '200px' }"></div>
+                        <div class="overlay"></div>
+                        <div class="hero-section-wrap fl-wrap">
+                            <div class="container">
+                                <div class="intro-item fl-wrap">
+                                    <h2>We will help you to find all</h2>
+                                    <h3>Find great places , hotels , restourants , shops.</h3>
+                                </div>
+                                <div class="main-search-input-wrap">
+                                    <div class="main-search-input fl-wrap">
+                                        <div class="main-search-input-item">
+                                            <input type="text" placeholder="What are you looking for?" value=""/>
+                                        </div>
+                                        <div class="main-search-input-item location" id="autocomplete-container">
+                                            <input type="text" placeholder="Location" id="autocomplete-input" value=""/>
+                                            <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                                        </div>
+                                        <div class="main-search-input-item">
+                                            <select data-placeholder="All Categories" multiple class="chosen-select" >
+                                                <option>All Categories</option>
+                                                <option>Shops</option>
+                                                <option>Hotels</option>
+                                                <option>Restaurants</option>
+                                                <option>Fitness</option>
+                                                <option>Events</option>
+                                            </select>
+                                        </div>
+                                        <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bubble-bg"> </div>
+                    </section>
+                    <!-- section end -->
+                </div>
+                <!-- Content end -->
+            </div>
+            <!-- wrapper end -->
+            <!--footer -->
+            <footer class="main-footer dark-footer">
+                <div class="sub-footer fl-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="copyright"> &#169; FWB Portal 2018 .  All rights reserved.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="footer-social">
+                                    <ul>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-facebook-official"></i></a></li>
+                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-chrome"></i></a></li>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-vk"></i></a></li>
+                                        <li><a href="#" target="_blank" ><i class="fa fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--footer end  -->
+            <!--register form -->
+            <div class="main-register-wrap modal">
+                <div class="main-overlay"></div>
+                <div class="main-register-holder">
+                    <div class="main-register fl-wrap">
+                        <div class="close-reg"><i class="fa fa-times"></i></div>
+                        <h3>Sign In <span>City<strong>Book</strong></span></h3>
+                        <div class="soc-log fl-wrap">
+                            <p>For faster login or register use your social account.</p>
+                            <a href="#" class="facebook-log"><i class="fa fa-facebook-official"></i>Log in with Facebook</a>
+                            <a href="#" class="twitter-log"><i class="fa fa-twitter"></i> Log in with Twitter</a>
+                        </div>
+                        <div class="log-separator fl-wrap"><span>or</span></div>
+                        <div id="tabs-container">
+                            <ul class="tabs-menu">
+                                <li class="current"><a href="#tab-1">Login</a></li>
+                                <li><a href="#tab-2">Register</a></li>
+                            </ul>
+                            <div class="tab">
+                                <div id="tab-1" class="tab-content">
+                                    <div class="custom-form">
+                                        <form method="post"  name="registerform">
+                                            <label>Username or Email Address * </label>
+                                            <input name="email" type="text"   onClick="this.select()" value="">
+                                            <label >Password * </label>
+                                            <input name="password" type="password"   onClick="this.select()" value="" >
+                                            <button type="submit"  class="log-submit-btn"><span>Log In</span></button>
+                                            <div class="clearfix"></div>
+                                            <div class="filter-tags">
+                                                <input id="check-a" type="checkbox" name="check">
+                                                <label for="check-a">Remember me</label>
+                                            </div>
+                                        </form>
+                                        <div class="lost_password">
+                                            <a href="#">Lost Your Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab">
+                                    <div id="tab-2" class="tab-content">
+                                        <div class="custom-form">
+                                            <form method="post"   name="registerform" class="main-register-form" id="main-register-form2">
+                                                <label >First Name * </label>
+                                                <input name="name" type="text"   onClick="this.select()" value="">
+                                                <label>Second Name *</label>
+                                                <input name="name2" type="text"  onClick="this.select()" value="">
+                                                <label>Email Address *</label>
+                                                <input name="email" type="text"  onClick="this.select()" value="">
+                                                <label >Password *</label>
+                                                <input name="password" type="password"   onClick="this.select()" value="" >
+                                                <button type="submit"     class="log-submit-btn"  ><span>Register</span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--register form end -->
+            <a class="to-top"><i class="fa fa-angle-up"></i></a>
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/plugins.js"></script>
+        <script type="text/javascript" src="/static/js/scripts.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete"></script>
+    </body>
+</html>
