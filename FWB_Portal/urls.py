@@ -27,5 +27,6 @@ admin.site.index_title = 'FWB Portal Administration'
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^search/', views.search, name='search'),
     url(r'^admin/', admin.site.urls),
 ]

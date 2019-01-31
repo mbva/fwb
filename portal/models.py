@@ -113,6 +113,7 @@ class Genus(models.Model):
 
 
 class Specie(models.Model):
+    code = models.CharField(max_length=6)
     kingdom = models.CharField(max_length=255)
     specie_class = models.CharField(max_length=255)
     order = models.CharField(max_length=255)
@@ -128,6 +129,11 @@ class Specie(models.Model):
 
     def __str__(self):
         return self.scientific_name
+
+    def save(self, *args, **kwargs):
+        self.code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6))
+        super(Specie, self).save(*args, **kwargs)
+
 
 
 class DataSet(models.Model):

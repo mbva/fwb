@@ -974,7 +974,7 @@ section.gray-section .section-separator {
 	border-bottom-right-radius:30px;
 	cursor:pointer;
 }
- 
+
 .main-search-input-item  .nice-select {
 	color:#292929;
 	float:left;
@@ -991,7 +991,7 @@ section.gray-section .section-separator {
     background: #fff;
     border-radius: 4px;
 	max-height: 180px;
-	
+
 }
 .main-search-input-item  .nice-select .list li{
 	float:left;
@@ -3248,7 +3248,7 @@ article .list-single-main-item {
 	width:100%;
 	position:relative;
 }
- 
+
 .custom-form .nice-select {
 	color:#fff;
 	border-radius:4px;
@@ -3260,7 +3260,7 @@ article .list-single-main-item {
 	width:100%;
 	padding: 80px 12px 10px;
     background: #fff;
- 
+
     border-radius: 4px;
 }
 .custom-form .nice-select .list li{
@@ -4118,7 +4118,7 @@ article .list-single-main-item {
 	border-bottom:1px solid #eee;
 	width:100%;
 }
- 
+
 .dashboard-list:nth-child(2n+1) {
 	background: #fbfbfb;
 }
@@ -5711,7 +5711,7 @@ footer.main-footer.fixed-footer {
 	height:50px;
 	padding-right:40px;
 	border-top:1px solid #eee;
- 
+
 }
 .chat-widget_input textarea {
 	display: block;
@@ -5813,7 +5813,7 @@ footer.main-footer.fixed-footer {
 	left:4px;
 	top:70px;
 	font-weight:500;
- 
+
 }
 .chat-message.chat-message_user .chat-message-user-name {
 	left:inherit;

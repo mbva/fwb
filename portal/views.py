@@ -30,7 +30,7 @@ from portal.models import *
 
 def home(request):
     categories = Category.objects.all()
-    species = DataSet.objects.all()
+    species = Specie.objects.all()
     institutions = Insititution.objects.all()
     water_bodies = WaterBody.objects.all()
     data_sets = DataSet.objects.all()
@@ -38,3 +38,15 @@ def home(request):
 
     variables = RequestContext(request, {"categories":categories, "species":species, "institutions":institutions, "water_bodies":water_bodies, "data_sets":data_sets, "occurrencies":occurrencies})
     return render_to_response("index.html", variables)
+
+
+def search(request):
+    categories = Category.objects.all()
+    species = Specie.objects.all()
+    institutions = Insititution.objects.all()
+    water_bodies = WaterBody.objects.all()
+    data_sets = DataSet.objects.all()
+    occurrencies = Occurrance.objects.all()
+
+    variables = RequestContext(request, {"categories":categories, "species":species, "institutions":institutions, "water_bodies":water_bodies, "data_sets":data_sets, "occurrencies":occurrencies})
+    return render_to_response("search.html", variables)

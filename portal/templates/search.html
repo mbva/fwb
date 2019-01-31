@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <title>Search results :: FWB Portal Uganda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="robots" content="index, follow"/>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <!--=============== css  ===============-->
+        <link type="text/css" rel="stylesheet" href="/static/css/reset.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/plugins.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+        <link type="text/css" rel="stylesheet" href="/static/css/color.css">
+
+        <link type="text/css" rel="stylesheet" href="/static/css/font-awesome/css/font-awesome.min.css">
+
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="/static/images/favicon.ico">
+    </head>
+    <body>
+        <!--loader-->
+        <div class="loader-wrap">
+            <div class="pin"></div>
+            <div class="pulse"></div>
+        </div>
+        <!--loader end-->
+        <!-- Main  -->
+        <div id="main">
+            <!-- header-->
+            {% include 'nav.html' %}
+            <!--  header end -->
+            <!-- wrapper -->
+            <div id="wrapper">
+                <div class="content">
+                    <!-- Map -->
+                    <div class="map-container column-map left-pos-map">
+                        <div id="map-main"></div>
+                    </div>
+                    <!-- Map end -->
+                    <!--col-list-wrap -->
+                    <div class="col-list-wrap right-list">
+                        <div class="listsearch-options fl-wrap" id="lisfw" >
+                            <div class="container">
+                                <!-- listsearch-input-wrap  -->
+                                <div class="listsearch-input-wrap fl-wrap">
+                                  <div class="listsearch-input-item">
+                                    <select data-placeholder="Categories" class="chosen-select" >
+                                      <option>All Categories</option>
+                                      {% for c in categories %}
+                                          <option value="{{ c.code }}">{{ c.name }}</option>
+                                      {% endfor %}
+                                    </select>
+                                  </div>
+
+                                    <div class="listsearch-input-item">
+                                        <select data-placeholder="Species" class="chosen-select">
+                                            <option>All Species</option>
+                                            {% for s in species %}
+                                                <option value="{{ c.code }}">{{ s.scientific_name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <button class="button fs-map-btn">Update</button>
+                                </div>
+                                <!-- listsearch-input-wrap end -->
+                            </div>
+                        </div>
+                        <!-- list-main-wrap-->
+                        <div class="list-main-wrap fl-wrap card-listing">
+                            <div class="container">
+                                <!-- listing-item -->
+                                <div class="listing-item" style="width:100%;">
+                                    <article class="geodir-category-listing fl-wrap">
+                                        <div class="geodir-category-content col-lg-12">
+                                            <h3><a href="#">DataSet Details</a></h3>
+                                            <p>
+                                              Description goes here
+                                            </p>
+                                            <div class="geodir-category-options fl-wrap">
+                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
+                                                    <span>(7 reviews)</span>
+                                                </div>
+                                                <div class="geodir-category-location"><a href="#0" class="map-item"><i class="fa fa-map-marker" aria-hidden="true"></i> Location goes here</a></div>
+                                                <span class="avatar-tooltip">Added By  <strong>...</strong></span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- listing-item end-->
+                                <div class="clearfix"></div>
+                                <!-- listing-item -->
+                                <div class="listing-item" style="width:100%;">
+                                    <article class="geodir-category-listing fl-wrap">
+                                        <div class="geodir-category-content col-lg-12">
+                                            <h3><a href="#">Occurrance Details</a></h3>
+                                            <p>
+                                              Description goes here
+                                            </p>
+                                            <div class="geodir-category-options fl-wrap">
+                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
+                                                    <span>(7 reviews)</span>
+                                                </div>
+                                                <div class="geodir-category-location"><a href="#0" class="map-item"><i class="fa fa-map-marker" aria-hidden="true"></i> Location goes here</a></div>
+                                                <span class="avatar-tooltip">Added By  <strong>...</strong></span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- listing-item end-->
+                                <div class="clearfix"></div>
+                                <!-- listing-item -->
+                                <div class="listing-item" style="width:100%;">
+                                    <article class="geodir-category-listing fl-wrap">
+                                        <div class="geodir-category-content col-lg-12">
+                                            <h3><a href="#">Specie Details</a></h3>
+                                            <p>
+                                              Description goes here
+                                            </p>
+                                            <div class="geodir-category-options fl-wrap">
+                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
+                                                    <span>(7 reviews)</span>
+                                                </div>
+                                                <div class="geodir-category-location"><a href="#0" class="map-item"><i class="fa fa-map-marker" aria-hidden="true"></i> Location goes here</a></div>
+                                                <span class="avatar-tooltip">Added By  <strong>...</strong></span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- listing-item end-->
+                            </div>
+                        </div>
+                        <!-- list-main-wrap end-->
+                    </div>
+                    <!--col-list-wrap -->
+                </div>
+                <!--content end -->
+            </div>
+            <!-- wrapper end -->
+            <!--footer -->
+            <footer class="main-footer dark-footer">
+                <div class="sub-footer fl-wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="copyright"> &#169; FWB Portal 2018 .  All rights reserved.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="footer-social">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--footer end  -->
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->
+        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/plugins.js"></script>
+        <script type="text/javascript" src="/static/js/scripts.js"></script>
+		    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo"></script>
+        <script type="text/javascript" src="/static/js/map_infobox.js"></script>
+        <script type="text/javascript" src="/static/js/markerclusterer.js"></script>
+        <script type="text/javascript" src="/static/js/maps.js"></script>
+    </body>
+</html>

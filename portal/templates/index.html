@@ -13,6 +13,9 @@
         <link type="text/css" rel="stylesheet" href="/static/css/plugins.css">
         <link type="text/css" rel="stylesheet" href="/static/css/style.css">
         <link type="text/css" rel="stylesheet" href="/static/css/color.css">
+
+        <link type="text/css" rel="stylesheet" href="/static/css/font-awesome/css/font-awesome.min.css">
+
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="/static/images/favicon.ico">
     </head>
@@ -26,51 +29,7 @@
         <!-- Main  -->
         <div id="main">
             <!-- header-->
-            <header class="main-header dark-header fs-header sticky">
-                <div class="header-inner">
-                    <div class="logo-holder">
-                        <a href="/"><img src="/static/images/logo.png" alt=""></a>
-                    </div>
-                    <!-- nav-button-wrap-->
-                    <div class="nav-button-wrap color-bg">
-                        <div class="nav-button">
-                            <span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    <!-- nav-button-wrap end-->
-                    <!--  navigation -->
-                    <div class="nav-holder main-menu">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="/" class="act-link">Home <i class="fa fa-caret-down"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#">Species <i class="fa fa-caret-down"></i></a>
-                                    <!--second level -->
-                                    <ul>
-                                      {% for c in species %}
-                                        <li><a href="#{{ c.code }}">{{ c.scientific_name }}</a></li>
-                                      {% endfor %}
-                                    </ul>
-                                    <!--second level end-->
-                                </li>
-                                <li>
-                                    <a href="#">Occurrences <i class="fa fa-caret-down"></i></a>
-                                    <!--second level -->
-                                    <ul>
-                                      {% for o in occurrencies %}
-                                        <li><a href="#{{ o.code }}">{{ o.specie.scientific_name }}</a></li>
-                                      {% endfor %}
-                                    </ul>
-                                    <!--second level end-->
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- navigation  end -->
-                </div>
-            </header>
+            {% include 'nav.html' %}
             <!--  header end -->
             <!--  wrapper  -->
             <div id="wrapper">
@@ -78,32 +37,44 @@
                 <div class="content">
                     <!--section -->
                     <section class="scroll-con-sec hero-section" data-scrollax-parent="true" id="sec1">
-                        <div class="bg"  data-bg="/static/images/bg/32.jpg" data-scrollax="properties: { translateY: '200px' }"></div>
+                        <div class="bg"  data-bg="/static/images/bg/23.png" data-scrollax="properties: { translateY: '200px' }"></div>
                         <div class="overlay"></div>
                         <div class="hero-section-wrap fl-wrap">
                             <div class="container">
                                 <div class="intro-item fl-wrap">
-                                    <h2>We will help you to find all</h2>
-                                    <h3>Find great places , hotels , restourants , shops.</h3>
+                                    <h2>Welcome to the FWB Portal</h2>
+                                    <h3>One stop center for all the Fresh Woter BioDiversity data in Uganda</h3>
                                 </div>
                                 <div class="main-search-input-wrap">
                                     <div class="main-search-input fl-wrap">
+                                      <form method="post" action="/search/">
+                                        {% csrf_token %}
                                         <div class="main-search-input-item">
-                                            <input type="text" placeholder="What are you looking for?" value=""/>
-                                        </div>
-                                        <div class="main-search-input-item location" id="autocomplete-container">
-                                            <input type="text" placeholder="Location" id="autocomplete-input" value=""/>
-                                            <a href="#"><i class="fa fa-dot-circle-o"></i></a>
+                                          <select data-placeholder="Select Specie" multiple class="chosen-select" >
+                                              <option>All Species</option>
+                                              {% for s in species %}
+                                                  <option value="{{ c.code }}">{{ s.scientific_name }}</option>
+                                              {% endfor %}
+                                          </select>
                                         </div>
                                         <div class="main-search-input-item">
-                                            <select data-placeholder="All Categories" multiple class="chosen-select" >
+                                          <select data-placeholder="Select DataSet" multiple class="chosen-select" >
+                                              <option>All DataSets</option>
+                                              {% for d in species %}
+                                                  <option value="{{ d.code }}">{{ s.scientific_name }}</option>
+                                              {% endfor %}
+                                          </select>
+                                        </div>
+                                        <div class="main-search-input-item">
+                                            <select data-placeholder="Select Categories" multiple class="chosen-select" >
                                                 <option>All Categories</option>
                                                 {% for c in categories %}
                                                     <option value="{{ c.code }}">{{ c.name }}</option>
                                                 {% endfor %}
                                             </select>
                                         </div>
-                                        <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>
+                                        <button class="main-search-button" type="submit">Search</button>
+                                      </form>
                                     </div>
                                 </div>
                             </div>
@@ -125,13 +96,6 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="footer-social">
-                                    <ul>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-facebook-official"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-chrome"></i></a></li>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-vk"></i></a></li>
-                                        <li><a href="#" target="_blank" ><i class="fa fa-whatsapp"></i></a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>

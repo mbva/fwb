@@ -24,9 +24,9 @@
         ];
 
         var map = new google.maps.Map(document.getElementById('map-main'), {
-            zoom: 9,
+            zoom: 7,
             scrollwheel: false,
-            center: new google.maps.LatLng(40.7, -73.87),
+            center: new google.maps.LatLng(1.3707295, 32.3032414),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             zoomControl: false,
             mapTypeControl: false,
@@ -215,7 +215,7 @@
         });
         var markerIcon2 = {
             url: 'images/marker.png',
-        }		
+        }
         var marker = new google.maps.Marker({
             position: myLatLng,
             map: single_map,
